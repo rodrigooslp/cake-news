@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import WebFont from 'webfontloader';
+
 import './index.css';
 import App from 'pages/App';
 import * as serviceWorker from './serviceWorker';
+
+WebFont.load({
+  google: {
+    families: ['Lato:400', 'Open Sans:400,400i']
+  }
+});
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
