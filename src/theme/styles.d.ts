@@ -4,10 +4,13 @@ import * as CSS from 'csstype';
 declare module 'styled-components' {
   export interface DefaultTheme {
     main: {
-      fontFamily: CSS.FontFamilyProperty
+      fontFamily: CSS.FontFamilyProperty,
       colors: {
-        text: CSS.ColorProperty
+        text: CSS.ColorProperty,
+        borders: {
+          input: CSS.BorderProperty
+        }
       }
-    },
+    };
   }
 }
