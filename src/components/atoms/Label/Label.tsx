@@ -9,5 +9,5 @@ const StyledLabel = styled.label`
   font-size: 14px;
 `;
 
-export const Label: FC<LabelProps> = ({ children }) =>
-  <StyledLabel>{children}</StyledLabel>;
+export const Label: FC<LabelProps> = ({ children, ...props }) =>
+  <StyledLabel { ...props }>{ children }</StyledLabel>;
