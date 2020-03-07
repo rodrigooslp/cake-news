@@ -9,8 +9,7 @@ const StyledLogo = styled.img.attrs({
   src: image1x,
   srcSet: `${image1x} 1x, ${image2x} 2x`
 })`
-  width: 45px;
-  height: 45px;
+  cursor: pointer;
 `
 
 export const Logo: FC<LogoProps> = (props) =>
