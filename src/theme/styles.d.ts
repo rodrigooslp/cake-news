@@ -6,6 +6,7 @@ declare module 'styled-components' {
     main: {
       fontFamily: CSS.FontFamilyProperty,
       colors: {
+        primary: CSS.ColorProperty,
         text: CSS.ColorProperty,
         borders: {
           input: CSS.BorderProperty
