@@ -7,7 +7,15 @@ declare module 'styled-components' {
       fontFamily: CSS.FontFamilyProperty,
       colors: {
         primary: CSS.ColorProperty,
+        highlight: CSS.ColorProperty,
+        transparent: CSS.ColorProperty,
         text: CSS.ColorProperty,
+        white: CSS.ColorProperty,
+        red: CSS.ColorProperty,
+        purple: CSS.ColorProperty,
+        blue: CSS.ColorProperty,
+        green: CSS.ColorProperty,
+        yellow: CSS.ColorProperty,
         borders: {
           input: CSS.BorderProperty
         }
