@@ -4,3 +4,4 @@ export * from './Input';
 export * from './Label';
 export * from './Logo';
 export * from './Typography';
+export * from './Avatar';
