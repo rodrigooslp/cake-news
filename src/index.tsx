@@ -8,7 +8,7 @@ import * as serviceWorker from './serviceWorker';
 
 WebFont.load({
   google: {
-    families: ['Lato:400', 'Open Sans:400,400i']
+    families: ['Lato:400,700', 'Open Sans:400,400i']
   }
 });
 
