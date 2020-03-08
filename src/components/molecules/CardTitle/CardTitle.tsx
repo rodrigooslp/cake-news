@@ -12,4 +12,11 @@ const StyledTypography = styled(Typography)`
 `;
 
 export const CardTitle: FC<CardTitleProps> = ({ featured, handleTitleClick, children, ...props }) =>
-  <StyledTypography size={featured ? 'xlg' : 'lg' } onClick={handleTitleClick} variant='subheading' color={'black'} {...props}>{children}</StyledTypography>;
+  <StyledTypography
+    variant='subheading'
+    color={'black'}
+    onClick={handleTitleClick}
+    size={featured ? 'xlg' : 'lg' }
+    {...props}>
+      {children}
+  </StyledTypography>;
