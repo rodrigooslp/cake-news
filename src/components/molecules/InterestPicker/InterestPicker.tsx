@@ -1,12 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { Label, Button } from 'components/atoms';
-
-type Interest = {
-  slug: 'politics' | 'business' | 'tech' | 'science' | 'sports';
-  text: 'POLITICS' | 'BUSINESS' | 'TECH' | 'SCIENCE' | 'SPORTS';
-  color: 'red' | 'purple' | 'blue' | 'green' | 'yellow';
-};
+import { NewsCategory } from 'models';
 
 type InterestPickerProps = {
   selectedInterests: string[];
@@ -47,13 +42,7 @@ const StyledButtonContainer = styled.div`
 `;
 
 export const InterestPicker: FC<InterestPickerProps> = ({ selectedInterests, handleAddInterest, handleRemoveInterest, ...props }) => {
-  const items: Interest[] = [
-    { slug: 'politics', text: 'POLITICS', color: 'red' },
-    { slug: 'business', text: 'BUSINESS', color: 'purple' },
-    { slug: 'tech', text: 'TECH', color: 'blue' },
-    { slug: 'science', text: 'SCIENCE', color: 'green' },
-    { slug: 'sports', text: 'SPORTS', color: 'yellow' }
-  ];
+  const items = NewsCategory.getAllNewsCategories();
 
   const handleClick = (slug: string) => {
     if (selectedInterests.includes(slug)) {
@@ -67,7 +56,7 @@ export const InterestPicker: FC<InterestPickerProps> = ({ selectedInterests, han
     <StyledInterestPicker { ...props }>
       <Label>MY INTERESTS</Label>
       <StyledPickerContainer>
-        { items.map(({ slug, text, color }: Interest) =>
+        { items.map(({ slug, text, color }: NewsCategory) =>
           <StyledButtonContainer key={slug}>
             <Button
               color={color}
