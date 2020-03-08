@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { Button, Typography } from 'components/atoms';
+import { NewsCategory } from 'models';
 
 type MenuProps = {
   isLoggedIn?: boolean;
@@ -21,13 +22,7 @@ const StyledMenuItem = styled.div`
 `;
 
 export const Menu: FC<MenuProps> = ({ handleMenuClick, isLoggedIn, ...props}) => {
-  const items = [
-    { slug: 'politics', text: 'POLITICS' },
-    { slug: 'business', text: 'BUSINESS' },
-    { slug: 'tech', text: 'TECH' },
-    { slug: 'science', text: 'SCIENCE' },
-    { slug: 'sports', text: 'SPORTS' },
-  ];
+  const items = NewsCategory.getAllNewsCategories();
 
   return (
     <StyledMenu { ...props }>
