@@ -7,3 +7,4 @@ export default {
 }
 
 export const Default = () => <AppBar handleMenuClick={action('clicked')}/>;
+export const LoggedIn = () => <AppBar isLoggedIn handleMenuClick={action('clicked')}/>;

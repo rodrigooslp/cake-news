@@ -4,6 +4,7 @@ import { Hamburger } from 'components/atoms';
 import { Menu } from 'components/molecules';
 
 type MenuHandlerProps = {
+  isLoggedIn?: boolean;
   handleMenuClick: (slug: string) => void;
 };
 
@@ -31,7 +32,7 @@ const MenuContainer = styled.div<MenuContainerProps>`
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
 `;
 
-export const MenuHandler: FC<MenuHandlerProps> = ({ handleMenuClick, ...props }) => {
+export const MenuHandler: FC<MenuHandlerProps> = ({ handleMenuClick, isLoggedIn, ...props }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [openMenu, setOpenMenu] = useState<boolean>(false);
 
@@ -47,11 +48,11 @@ export const MenuHandler: FC<MenuHandlerProps> = ({ handleMenuClick, ...props })
   });
 
   return (
-    <StyledMenuHandler ref={ref}>
+    <StyledMenuHandler ref={ref} {...props}>
       <StyledHamburger onClick={() => setOpenMenu(!openMenu)}/>
 
       <MenuContainer open={openMenu}>
-        <Menu handleMenuClick={handleMenuClick}/>
+        <Menu isLoggedIn={isLoggedIn} handleMenuClick={handleMenuClick}/>
       </MenuContainer>
     </StyledMenuHandler>
   );

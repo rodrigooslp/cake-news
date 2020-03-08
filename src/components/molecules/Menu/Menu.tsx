@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Button, Typography } from 'components/atoms';
 
 type MenuProps = {
+  isLoggedIn?: boolean;
   handleMenuClick: (slug: string) => void;
 };
 
@@ -19,7 +20,7 @@ const StyledMenuItem = styled.div`
   margin-bottom: 31px;
 `;
 
-export const Menu: FC<MenuProps> = ({ handleMenuClick, ...props}) => {
+export const Menu: FC<MenuProps> = ({ handleMenuClick, isLoggedIn, ...props}) => {
   const items = [
     { slug: 'politics', text: 'POLITICS' },
     { slug: 'business', text: 'BUSINESS' },
@@ -38,11 +39,23 @@ export const Menu: FC<MenuProps> = ({ handleMenuClick, ...props}) => {
         </StyledMenuItem>
       )}
 
-      <StyledMenuItem>
-        <Button onClick={() => handleMenuClick('login')} variant="link" color="text">
-          <Typography size="small" color="primary" weight="bold">LOGIN</Typography>
-        </Button>
-      </StyledMenuItem>
+      {
+        isLoggedIn &&
+        <StyledMenuItem>
+          <Button onClick={() => handleMenuClick('interests')} variant="link" color="text">
+            <Typography size="small" color="primary" weight="bold">INTERESTS</Typography>
+          </Button>
+        </StyledMenuItem>
+      }
+
+      {
+        !isLoggedIn &&
+        <StyledMenuItem>
+          <Button onClick={() => handleMenuClick('login')} variant="link" color="text">
+            <Typography size="small" color="primary" weight="bold">LOGIN</Typography>
+          </Button>
+        </StyledMenuItem>
+      }
     </StyledMenu>
   );
 }

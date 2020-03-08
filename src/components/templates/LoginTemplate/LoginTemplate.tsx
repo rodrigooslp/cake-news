@@ -4,6 +4,7 @@ import { Typography } from 'components/atoms';
 import { AppBar, LoginForm, LoginFormData } from 'components/organisms'
 
 type LoginTemplateProps = {
+  isLoggedIn?: boolean;
   handleMenuClick: (slug: string) => void;
   handleLogin: (data: LoginFormData) => void;
 };
@@ -18,10 +19,10 @@ const StyledTypography = styled(Typography)`
   margin: 58px 0 63px;
 `;
 
-export const LoginTemplate: FC<LoginTemplateProps> = ({ handleMenuClick, handleLogin, ...props }) => {
+export const LoginTemplate: FC<LoginTemplateProps> = ({ handleMenuClick, isLoggedIn, handleLogin, ...props }) => {
   return (
     <StyledLoginTemplate { ...props }>
-      <AppBar handleMenuClick={handleMenuClick} />
+      <AppBar isLoggedIn={isLoggedIn} handleMenuClick={handleMenuClick} />
       <StyledTypography variant='heading'>USER AREA</StyledTypography>
       <LoginForm handleLogin={handleLogin}/>
     </StyledLoginTemplate>
