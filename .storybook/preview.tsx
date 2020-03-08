@@ -3,6 +3,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import WebFont from 'webfontloader';
 
+import '../src/index.css'
 import { theme } from '../src/theme';
 
 WebFont.load({
