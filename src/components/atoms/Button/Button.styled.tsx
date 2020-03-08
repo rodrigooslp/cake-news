@@ -28,7 +28,6 @@ export const SmallButton = styled(BaseButton)<ButtonProps>`
     } else {
       return `
         color: ${props.theme.main.colors[props.color ? props.color : 'blue']};
-        border: 1px solid ${props.theme.main.colors[props.color ? props.color : 'blue']};
         background-color: ${props.theme.main.colors.transparent};
       `
     }
@@ -37,8 +36,9 @@ export const SmallButton = styled(BaseButton)<ButtonProps>`
   border-radius: 100px;
   padding: 5px 18px 6px;
   font-size: 14px;
+  border: 1px solid ${(props) => props.theme.main.colors[props.color ? props.color : 'blue']};
 
-  &:hover, &:focus {
+  &:hover {
     color: ${(props) => props.theme.main.colors.white};
     background-color: ${(props) => props.theme.main.colors[props.color ? props.color : 'blue']};
   }
