@@ -6,6 +6,7 @@ type InputProps = {
   type?: 'text' | 'password';
   width?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  autocomplete?: string;
 };
 
 const StyledInput = styled.input.attrs(props => ({ type: props.type || 'text' }))<InputProps>`
@@ -19,4 +20,4 @@ const StyledInput = styled.input.attrs(props => ({ type: props.type || 'text' })
 `;
 
 export const Input: FC<InputProps> = (props) =>
-  <StyledInput {...props} />;
+  <StyledInput autocomplete='off' {...props} />;
