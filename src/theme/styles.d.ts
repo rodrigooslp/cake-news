@@ -5,6 +5,7 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     main: {
       fontFamily: CSS.FontFamilyProperty,
+      fontFamilyAlt: CSS.FontFamilyProperty,
       fontSizes: {
         small: CSS.FontSizeProperty, // deprecated
         large: CSS.FontSizeProperty, // deprecated
@@ -31,6 +32,8 @@ declare module 'styled-components' {
         blue: CSS.ColorProperty,
         green: CSS.ColorProperty,
         yellow: CSS.ColorProperty,
+        lightGray: CSS.ColorProperty,
+        gray: CSS.ColorProperty,
         borders: {
           input: CSS.BorderProperty,
           appBar: CSS.BorderProperty
