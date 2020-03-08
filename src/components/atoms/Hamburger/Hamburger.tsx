@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import image1x from 'assets/icons/menu.png';
 import image2x from 'assets/icons/menu@2x.png';
 
-type HamburgerProps = {};
+type HamburgerProps = {
+  onClick?: (e: React.MouseEvent<HTMLImageElement>) => void;
+};
 
 const StyledHamburger = styled.img.attrs({
   src: image1x,

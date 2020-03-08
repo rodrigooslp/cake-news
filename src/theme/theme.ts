@@ -3,6 +3,14 @@ import { DefaultTheme } from 'styled-components'
 export const theme: DefaultTheme = {
   main: {
     fontFamily: 'Lato',
+    fontSizes: {
+      small: '14px',
+      large: '24px'
+    },
+    fontWeights: {
+      normal: 400,
+      bold: 700
+    },
     colors: {
       primary: '#4990E2',
       highlight: '#5E9BE2',
@@ -15,7 +23,8 @@ export const theme: DefaultTheme = {
       green: '#7CBB37',
       yellow: '#F5A623',
       borders: {
-        input: '#BFBFBF'
+        input: '#BFBFBF',
+        appBar: '#979797'
       }
     }
   }
