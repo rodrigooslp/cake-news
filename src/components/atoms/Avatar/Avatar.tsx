@@ -1,12 +1,18 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 
+type ImageProps = {
+  featured?: boolean;
+  src: string;
+}
+
 type AvatarProps = {
+  handleAvatarClick: (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => void;
   featured?: boolean;
   src: string;
 };
 
-const StyledAvatar = styled.img.attrs((props) => ({ src: props.src }))<AvatarProps>`
+const StyledAvatar = styled.img.attrs((props) => ({ src: props.src }))<ImageProps>`
   cursor: pointer;
   border-radius: 45px;
 
@@ -25,5 +31,5 @@ const StyledAvatar = styled.img.attrs((props) => ({ src: props.src }))<AvatarPro
   }}
 `
 
-export const Avatar: FC<AvatarProps> = ({ src, featured, ...props }) =>
-  <StyledAvatar src={src} featured={featured} { ...props } />;
+export const Avatar: FC<AvatarProps> = ({ handleAvatarClick, src, featured, ...props }) =>
+  <StyledAvatar onClick={handleAvatarClick} src={src} featured={featured} { ...props } />;
