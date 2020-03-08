@@ -5,6 +5,7 @@ export type ButtonProps = {
   variant?: 'small' | 'default' | 'link';
   color?: 'red' | 'purple' | 'blue' | 'green' | 'yellow' | 'text' | 'primary';
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  type?: 'button' | 'submit';
 };
 
 const BaseButton = styled.button<ButtonProps>`
