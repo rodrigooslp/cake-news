@@ -15,9 +15,10 @@ const StyledMenuHandler = styled.div`
   background-color: ${(props) => props.theme.main.colors.white};
 `;
 
-const HamburgerContainer = styled.div`
+const StyledHamburger = styled(Hamburger)`
   position: absolute;
   left: 52px;
+  top: 18px;
 `;
 
 const MenuContainer = styled.div<MenuContainerProps>`
@@ -47,9 +48,7 @@ export const MenuHandler: FC<MenuHandlerProps> = ({ handleMenuClick, ...props })
 
   return (
     <StyledMenuHandler ref={ref}>
-      <HamburgerContainer>
-        <Hamburger onClick={() => setOpenMenu(!openMenu)}/>
-      </HamburgerContainer>
+      <StyledHamburger onClick={() => setOpenMenu(!openMenu)}/>
 
       <MenuContainer open={openMenu}>
         <Menu handleMenuClick={handleMenuClick}/>
