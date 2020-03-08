@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from './Button';
 
 export default {
-  title: 'Button'
+  title: 'atoms/Button'
 }
 
 export const Default = () => <Button onClick={action('clicked')}>SAVE</Button>;
