@@ -6,8 +6,14 @@ declare module 'styled-components' {
     main: {
       fontFamily: CSS.FontFamilyProperty,
       fontSizes: {
-        small: CSS.FontSizeProperty,
-        large: CSS.FontSizeProperty
+        small: CSS.FontSizeProperty, // deprecated
+        large: CSS.FontSizeProperty, // deprecated
+        xxs: CSS.FontSizeProperty,
+        xs: CSS.FontSizeProperty,
+        sm: CSS.FontSizeProperty,
+        md: CSS.FontSizeProperty,
+        lg: CSS.FontSizeProperty,
+        xlg: CSS.FontSizeProperty
       },
       fontWeights: {
         normal: CSS.FontWeightAbsolute,
