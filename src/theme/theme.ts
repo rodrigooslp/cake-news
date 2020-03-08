@@ -6,8 +6,14 @@ export const theme: DefaultTheme = {
   main: {
     fontFamily: 'Lato',
     fontSizes: {
-      small: '14px',
-      large: '24px'
+      small: '14px', // deprecated
+      large: '24px', // deprecated
+      xxs: '10px',
+      xs: '13px',
+      sm: '14px',
+      md: '16px',
+      lg: '24px',
+      xlg: '29px'
     },
     fontWeights: {
       normal: 400,
