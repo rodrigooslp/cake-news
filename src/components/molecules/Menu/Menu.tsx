@@ -11,6 +11,7 @@ const StyledMenu = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${(props) => props.theme.main.colors.white};
+  box-shadow: inset 0 -1px 4px -2px black;
 `;
 
 const StyledMenuItem = styled.div`
