@@ -1,5 +1,7 @@
 import { DefaultTheme } from 'styled-components'
 
+export type ThemeColor = 'red' | 'purple' | 'blue' | 'green' | 'yellow' | 'text' | 'primary';
+
 export const theme: DefaultTheme = {
   main: {
     fontFamily: 'Lato',

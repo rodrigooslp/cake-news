@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import { ThemeColor } from 'theme';
 
 export type TypographyProps = {
   variant?: 'heading' | 'subheading' | 'content';
-  color?: 'text' | 'primary';
+  color?: ThemeColor;
   size?: 'small' | 'large';
   weight?: 'normal' | 'bold';
 };

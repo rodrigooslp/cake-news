@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { ThemeColor } from 'theme';
 
 export type ButtonProps = {
   active?: boolean;
   variant?: 'small' | 'default' | 'link';
-  color?: 'red' | 'purple' | 'blue' | 'green' | 'yellow' | 'text' | 'primary';
+  color?: ThemeColor;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   type?: 'button' | 'submit';
 };
