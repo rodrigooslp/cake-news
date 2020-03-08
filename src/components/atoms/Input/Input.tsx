@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 
 type InputProps = {
+  id?: string;
   type?: 'text' | 'password';
   width?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
