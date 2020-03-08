@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 type ButtonProps = {
   variant?: 'small' | 'default' | 'link';
-  color?: 'red' | 'purple' | 'blue' | 'green' | 'yellow';
+  color?: 'red' | 'purple' | 'blue' | 'green' | 'yellow' | 'text' | 'primary';
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
@@ -44,7 +44,7 @@ const DefaultButton = styled(BaseButton)<ButtonProps>`
 `;
 
 const LinkButton = styled(BaseButton)<ButtonProps>`
-  color: ${(props) => props.theme.main.colors.primary};
+  color: ${(props) => props.theme.main.colors[props.color ? props.color : 'primary']};
   background-color: ${(props) => props.theme.main.colors.transparent};
   font-size: 16px;
   padding: 0;
