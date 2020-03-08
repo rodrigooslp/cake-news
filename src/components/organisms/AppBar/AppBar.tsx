@@ -4,6 +4,7 @@ import { Logo } from 'components/atoms';
 import { MenuHandler } from 'components/organisms';
 
 type AppBarProps = {
+  isLoggedIn?: boolean;
   handleMenuClick: (slug: string) => void;
 };
 
@@ -17,11 +18,11 @@ const StyledAppBar = styled.div`
   background-color: ${(props) => props.theme.main.colors.white};
 `;
 
-export const AppBar: FC<AppBarProps> = ({ handleMenuClick, ...props }) => {
+export const AppBar: FC<AppBarProps> = ({ handleMenuClick, isLoggedIn, ...props }) => {
 
   return (
     <StyledAppBar { ...props }>
-      <MenuHandler handleMenuClick={handleMenuClick} />
+      <MenuHandler isLoggedIn={isLoggedIn} handleMenuClick={handleMenuClick} />
       <Logo />
     </StyledAppBar>
   );

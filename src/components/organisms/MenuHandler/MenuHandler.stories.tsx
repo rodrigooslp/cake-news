@@ -7,3 +7,4 @@ export default {
 }
 
 export const Default = () => <MenuHandler handleMenuClick={action('clicked')}/>;
+export const LoggedIn = () => <MenuHandler isLoggedIn handleMenuClick={action('clicked')}/>;

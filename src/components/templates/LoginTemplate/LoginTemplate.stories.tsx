@@ -6,4 +6,5 @@ export default {
   title: 'templates/LoginTemplate'
 }
 
-export const Default = () => <LoginTemplate handleMenuClick={action('clicked')} handleLogin={action('submitted')} />;
+export const Default = () => <LoginTemplate isLoggedIn={false} handleMenuClick={action('clicked')} handleLogin={action('submitted')} />;
+

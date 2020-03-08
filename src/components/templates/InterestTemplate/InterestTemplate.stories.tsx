@@ -8,6 +8,7 @@ export default {
 
 export const Default = () =>
   <InterestTemplate
+    isLoggedIn
     username='cheesecake-labs'
     handleMenuClick={action('clicked')}
     handleSave={action('submitted')}
