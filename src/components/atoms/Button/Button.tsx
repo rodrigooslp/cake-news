@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 
 type ButtonProps = {
+  active?: boolean;
   variant?: 'small' | 'default' | 'link';
   color?: 'red' | 'purple' | 'blue' | 'green' | 'yellow' | 'text' | 'primary';
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
@@ -18,9 +19,21 @@ const BaseButton = styled.button<ButtonProps>`
 `;
 
 const SmallButton = styled(BaseButton)<ButtonProps>`
-  color: ${(props) => props.theme.main.colors[props.color ? props.color : 'blue']};
-  border: 1px solid ${(props) => props.theme.main.colors[props.color ? props.color : 'blue']};
-  background-color: ${(props) => props.theme.main.colors.transparent};
+  ${(props) => {
+    if (props.active) {
+      return `
+        color: ${props.theme.main.colors.white};
+        background-color: ${props.theme.main.colors[props.color ? props.color : 'blue']};
+      `
+    } else {
+      return `
+        color: ${props.theme.main.colors[props.color ? props.color : 'blue']};
+        border: 1px solid ${props.theme.main.colors[props.color ? props.color : 'blue']};
+        background-color: ${props.theme.main.colors.transparent};
+      `
+    }
+  }}
+
   border-radius: 100px;
   padding: 5px 18px 6px;
   font-size: 14px;
