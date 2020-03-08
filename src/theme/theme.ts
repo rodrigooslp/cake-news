@@ -1,10 +1,11 @@
 import { DefaultTheme } from 'styled-components'
 
-export type ThemeColor = 'red' | 'purple' | 'blue' | 'green' | 'yellow' | 'text' | 'primary' | 'black' | 'white';
+export type ThemeColor = 'red' | 'purple' | 'blue' | 'green' | 'yellow' | 'text' | 'primary' | 'black' | 'white' | 'lightGray' | 'gray';
 
 export const theme: DefaultTheme = {
   main: {
     fontFamily: 'Lato',
+    fontFamilyAlt: 'Open Sans',
     fontSizes: {
       small: '14px', // deprecated
       large: '24px', // deprecated
@@ -31,6 +32,8 @@ export const theme: DefaultTheme = {
       blue: '#4A90E2',
       green: '#7CBB37',
       yellow: '#F5A623',
+      lightGray: '#808080',
+      gray: '#686868',
       borders: {
         input: '#BFBFBF',
         appBar: '#979797'
