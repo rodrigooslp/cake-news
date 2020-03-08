@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Button } from 'components/atoms';
 
 type InterestActionsProps = {
-  handleSave: () => void;
   handleBack: () => void;
 };
 
@@ -17,10 +16,10 @@ const StyledButton = styled(Button)`
   margin-bottom: 27px;
 `;
 
-export const InterestActions: FC<InterestActionsProps> = ({ handleSave, handleBack, ...props }) => {
+export const InterestActions: FC<InterestActionsProps> = ({ handleBack, ...props }) => {
   return (
     <StyledInterestActions { ...props }>
-      <StyledButton onClick={() => handleSave()}>SAVE</StyledButton>
+      <StyledButton type='submit'>SAVE</StyledButton>
       <Button variant='link' onClick={() => handleBack()}>BACK TO HOME</Button>
     </StyledInterestActions>
   );
