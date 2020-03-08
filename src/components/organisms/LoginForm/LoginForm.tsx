@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Button } from 'components/atoms';
 import { FormGroup } from 'components/molecules';
 
-type LoginFormData = {
+export type LoginFormData = {
   username: string;
   password: string;
 }
