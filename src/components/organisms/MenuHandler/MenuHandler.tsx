@@ -27,6 +27,7 @@ const MenuContainer = styled.div<MenuContainerProps>`
   top: 57px;
   left: 0;
   width: 100%;
+  height: calc(100vh - 211px);
   transition: transform 0.3s ease-in-out;
   transform: translateX(-100%);
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
