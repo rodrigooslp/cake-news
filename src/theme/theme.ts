@@ -1,6 +1,6 @@
 import { DefaultTheme } from 'styled-components'
 
-export type ThemeColor = 'red' | 'purple' | 'blue' | 'green' | 'yellow' | 'text' | 'primary';
+export type ThemeColor = 'red' | 'purple' | 'blue' | 'green' | 'yellow' | 'text' | 'primary' | 'black' | 'white';
 
 export const theme: DefaultTheme = {
   main: {
@@ -11,7 +11,7 @@ export const theme: DefaultTheme = {
       xxs: '10px',
       xs: '13px',
       sm: '14px',
-      md: '16px',
+      md: '17px',
       lg: '24px',
       xlg: '29px'
     },
@@ -25,6 +25,7 @@ export const theme: DefaultTheme = {
       transparent: '#00000000',
       text: '#3E433E',
       white: '#fff',
+      black: '#000',
       red: '#D0021B',
       purple: '#BD10E0',
       blue: '#4A90E2',

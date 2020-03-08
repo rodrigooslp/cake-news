@@ -25,6 +25,7 @@ declare module 'styled-components' {
         transparent: CSS.ColorProperty,
         text: CSS.ColorProperty,
         white: CSS.ColorProperty,
+        black: CSS.ColorProperty,
         red: CSS.ColorProperty,
         purple: CSS.ColorProperty,
         blue: CSS.ColorProperty,
