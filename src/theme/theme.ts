@@ -37,7 +37,8 @@ export const theme: DefaultTheme = {
       borders: {
         input: '#BFBFBF',
         appBar: '#979797'
-      }
+      },
+      overlay: '#80808052'
     }
   }
 }
