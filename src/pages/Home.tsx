@@ -1,26 +1,20 @@
 import React, { FC, useState, useLayoutEffect, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { InterestTemplate, InterestFormData } from 'components';
+import { HomeTemplate } from 'components';
+import { News } from 'models';
 import { FakeService } from 'api';
 
-export const Interests: FC = () => {
+export const Home: FC = () => {
   const history = useHistory();
-
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-  const [username, setUsername] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
-  const [selected, setSelected] = useState<string[]>([]);
-
-  const handleSave = async (data: InterestFormData) => {
-    setLoading(true);
-    await FakeService.saveInterests(data);
-
-    setLoading(false);
-    history.push('/');
-  };
+  const [news, setNews] = useState<News []>([]);
 
   const redirectToHome = (slug?: string) => {
-    if (slug === 'interests') return;
+    if (slug === 'interests') {
+      history.push('/interests');
+      return;
+    };
 
     if (slug === 'logout') {
       localStorage.removeItem('cake-user');
@@ -37,21 +31,22 @@ export const Interests: FC = () => {
     history.push('/');
   };
 
-  useLayoutEffect(() => {
-    const user = localStorage.getItem('cake-user');
-    if (!user) {
-      history.push('/login');
-      return;
-    }
+  const showAuthor = (author: string) => {
+    console.log({ author });
+  };
 
-    setIsLoggedIn(!!user);
-    setUsername(user);
-  }, [history]);
+  const showNews = (id: number) => {
+    console.log({ id })
+  };
+
+  const showTag = (slug: string) => {
+    console.log({ slug });
+  };
 
   const getInterests = async () => {
     setLoading(true);
     const { interests } = await FakeService.getInterests();
-    setSelected(interests);
+    setNews(await FakeService.getNews(interests));
     setLoading(false);
     console.log(interests);
   };
@@ -60,13 +55,23 @@ export const Interests: FC = () => {
     getInterests();
   }, []);
 
+  useLayoutEffect(() => {
+    const user = localStorage.getItem('cake-user');
+    if (!user) {
+      history.push('/login');
+      return;
+    }
+
+    setIsLoggedIn(!!user);
+  }, [history]);
+
   return (
-    <InterestTemplate
-      selected={selected}
-      username={username}
+    <HomeTemplate
+      news={news}
       isLoggedIn={isLoggedIn}
-      handleSave={handleSave}
-      handleBack={redirectToHome}
+      handleTagClick={showTag}
+      handleCardClick={showNews}
+      handleAuthorClick={showAuthor}
       handleLogoClick={redirectToHome}
       handleMenuClick={redirectToHome}
     />

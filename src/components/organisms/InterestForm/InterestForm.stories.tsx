@@ -7,3 +7,4 @@ export default {
 }
 
 export const Default = () => <InterestForm handleSave={action('submitted')} handleBack={action('back')}/>;
+export const Selected = () => <InterestForm selected={['politics', 'sports']} handleSave={action('submitted')} handleBack={action('back')}/>;
