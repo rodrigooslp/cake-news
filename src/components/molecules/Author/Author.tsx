@@ -14,4 +14,4 @@ const StyledTypography = styled(Typography)`
 `;
 
 export const Author: FC<AuthorProps> = ({ handleAuthorClick, children, ...props }) =>
-  <StyledTypography size={'xs'} onClick={handleAuthorClick} color={'lightGray'} {...props}>{children}</StyledTypography>;
+  <StyledTypography size={'xs'} onClick={handleAuthorClick} color={'lightGray'} {...props}>by {children}</StyledTypography>;
