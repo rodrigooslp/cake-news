@@ -15,4 +15,4 @@ const StyledLogo = styled.img.attrs({
 `
 
 export const Logo: FC<LogoProps> = ({ handleLogoClick, ...props }) =>
-  <StyledLogo onClick={handleLogoClick} { ...props } />;
+  <StyledLogo onClick={() => handleLogoClick && handleLogoClick()} { ...props } />;
