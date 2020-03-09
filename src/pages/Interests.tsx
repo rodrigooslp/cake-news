@@ -10,7 +10,7 @@ export const Interests: FC = () => {
   };
 
   const redirectToHome = (slug?: string) => {
-    console.log(slug);
+    console.log({ slug });
   };
 
   return (
