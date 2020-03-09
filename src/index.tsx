@@ -21,6 +21,7 @@ const routing = (
     <Route exact path="/" component={Home} />
     <Route path="/login" component={Login} />
     <Route path="/interests" component={Interests} />
+    <Route path="/tag/:slug" component={Home} />
   </Router>
 );
 
