@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { CardTag, CardTitle, CardOverlay, AuthorGroup, CardContent } from 'components/molecules';
-import { CardImage, ExampleNews } from 'components/atoms';
-import { NewsType } from 'models';
+import { CardImage } from 'components/atoms';
+import { NewsType, ExampleNews } from 'models';
 
 type StyledCardTagProps = {
   hasImage: boolean;
@@ -69,7 +69,7 @@ export const Card: FC<CardProps> = ({
     }
 
     <CardTitle featured={featured} handleTitleClick={handleTitleClick}>{title}</CardTitle>
-    <AuthorGroup srcAvatar={avatar} handleAuthorClick={handleAuthorClick}>{author}</AuthorGroup>
+    <AuthorGroup featured={featured} srcAvatar={avatar} handleAuthorClick={handleAuthorClick}>{author}</AuthorGroup>
 
     {
       !featured &&

@@ -2,6 +2,21 @@ import { DefaultTheme } from 'styled-components'
 
 export type ThemeColor = 'red' | 'purple' | 'blue' | 'green' | 'yellow' | 'text' | 'primary' | 'black' | 'white' | 'lightGray' | 'gray';
 
+export const awesomegrid = {
+  columns: {
+    xs: 12,
+    sm: 12,
+    md: 12
+  },
+  gutterWidth: {
+    xs: 2,
+    sm: 2,
+    md: 2,
+    lg: 2,
+    xl: 2
+  }
+};
+
 export const theme: DefaultTheme = {
   main: {
     fontFamily: 'Lato',

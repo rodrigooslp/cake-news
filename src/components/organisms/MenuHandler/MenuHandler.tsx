@@ -31,6 +31,7 @@ const MenuContainer = styled.div<MenuContainerProps>`
   transition: transform 0.3s ease-in-out;
   transform: translateX(-100%);
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+  z-index: 10;
 `;
 
 export const MenuHandler: FC<MenuHandlerProps> = ({ handleMenuClick, isLoggedIn, ...props }) => {
