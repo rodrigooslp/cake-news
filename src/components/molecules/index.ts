@@ -1,5 +1,6 @@
 export * from './Author';
 export * from './AuthorGroup';
+export * from './CardContent';
 export * from './CardTag';
 export * from './CardTitle';
 export * from './FormGroup';
