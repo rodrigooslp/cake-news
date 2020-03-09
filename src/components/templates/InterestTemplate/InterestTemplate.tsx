@@ -9,6 +9,7 @@ type InterestTemplateProps = {
   handleMenuClick: (slug: string) => void;
   handleSave: (data: InterestFormData) => void;
   handleBack: () => void;
+  handleLogoClick: () => void;
 };
 
 const StyledInterestTemplate = styled.div`
@@ -21,10 +22,10 @@ const StyledWelcome = styled(Welcome)`
   margin: 59px 0 61px;
 `;
 
-export const InterestTemplate: FC<InterestTemplateProps> = ({ isLoggedIn, username, handleMenuClick, handleSave, handleBack, ...props }) => {
+export const InterestTemplate: FC<InterestTemplateProps> = ({ isLoggedIn, username, handleLogoClick, handleMenuClick, handleSave, handleBack, ...props }) => {
   return (
     <StyledInterestTemplate { ...props }>
-      <AppBar isLoggedIn={isLoggedIn} handleMenuClick={handleMenuClick} />
+      <AppBar handleLogoClick={handleLogoClick} isLoggedIn={isLoggedIn} handleMenuClick={handleMenuClick} />
       <StyledWelcome username={username}/>
       <InterestForm handleSave={handleSave} handleBack={handleBack}/>
     </StyledInterestTemplate>
