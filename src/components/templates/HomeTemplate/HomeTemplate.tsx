@@ -89,7 +89,7 @@ export const HomeTemplate: FC<HomeTemplateProps> = ({ news, handleLogoClick, han
         <Row>
           {
             listNews.map(({ image, ...item }) =>
-              <Col xs={12} sm={6} md={4}>
+              <Col xs={12} sm={6} md={4} key={item.id}>
                 <Card {...item} {...setHandlers(item)} />
               </Col>
             )
