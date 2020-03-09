@@ -29,6 +29,7 @@
   {
     "id": 4,
     "type": "sports",
+    "image": "news-3",
     "title": "For Some Atlanta Hawks, a Revved-Up Game of Uno Is Diversion No. 1",
     "avatar": "https://i.pravatar.cc/45?u=pambeesly@dundermifflin.com",
     "author": "Pam Beesly",
@@ -37,6 +38,7 @@
   {
     "id": 5,
     "type": "tech",
+    "image": "news-1",
     "title": "Picking a Windows 10 Security Package",
     "avatar": "https://i.pravatar.cc/45?u=pambeesly@dundermifflin.com",
     "author": "Pam Beesly",
@@ -45,6 +47,7 @@
   {
     "id": 6,
     "type": "science",
+    "image": "news-2",
     "title": "As U.S. Modernizes Nuclear Weapons, ‘Smaller’ Leaves Some Uneasy",
     "avatar": "https://i.pravatar.cc/45?u=pambeesly@dundermifflin.com",
     "author": "Pam Beesly",
