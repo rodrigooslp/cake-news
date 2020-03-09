@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { FakeService } from 'api';
 import { LoginTemplate, LoginFormData } from 'components';
-import { Spinner } from 'util/Spinner';
+import { Spinner } from 'shared';
 
 export const Login: FC = () => {
   const history = useHistory();

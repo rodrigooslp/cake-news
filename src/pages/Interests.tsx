@@ -2,7 +2,7 @@ import React, { FC, useState, useLayoutEffect, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { InterestTemplate, InterestFormData } from 'components';
 import { FakeService } from 'api';
-import { Spinner } from 'util/Spinner';
+import { Spinner } from 'shared';
 
 export const Interests: FC = () => {
   const history = useHistory();

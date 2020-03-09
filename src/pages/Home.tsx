@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { HomeTemplate } from 'components';
 import { News } from 'models';
 import { FakeService } from 'api';
-import { Spinner } from 'util/Spinner';
+import { Spinner } from 'shared';
 
 interface HomeProps {
   match: any;
