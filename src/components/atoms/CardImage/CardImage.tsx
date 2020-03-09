@@ -10,17 +10,18 @@ import news2at2x from 'assets/images/news_02@2x.jpg';
 import news3 from 'assets/images/news_03.jpg';
 import news3at2x from 'assets/images/news_03@2x.jpg';
 
+export type ExampleNews = 'news-1' | 'news-2' | 'news-3';
+
 type ImageProps = {
   src: string;
   srcSet: string;
 }
 
 type CardImageProps = {
-  type: 'news-1' | 'news-2' | 'news-3';
+  type: ExampleNews;
 };
 
 const StyledCardImage = styled.img.attrs((props) => ({ src: props.src, srcSet: props.srcSet }))<ImageProps>`
-  cursor: pointer;
   width: 100%;
   height: 100%;
 `
