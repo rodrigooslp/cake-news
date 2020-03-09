@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import WebFont from 'webfontloader';
 
 import '../src/index.css'
-import { theme, awesomegrid } from '../src/theme';
+import { theme } from '../src/theme';
 
 WebFont.load({
   google: {
@@ -13,5 +13,5 @@ WebFont.load({
 });
 
 addDecorator(story =>
-  <ThemeProvider theme={{...theme, awesomegrid}}>{story()}</ThemeProvider>
+  <ThemeProvider theme={theme}>{story()}</ThemeProvider>
 );
