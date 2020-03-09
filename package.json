@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "react": "^16.13.0",
+    "react-awesome-styled-grid": "^3.0.4",
     "styled-components": "^5.0.1",
     "webfontloader": "^1.6.28"
   },
@@ -52,6 +53,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "1.7.0",
+    "prop-types": "^15.7.2",
     "react-dom": "^16.13.0",
     "react-is": "^16.13.0",
     "react-scripts": "3.4.0",
