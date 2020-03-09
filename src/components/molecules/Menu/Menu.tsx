@@ -44,6 +44,15 @@ export const Menu: FC<MenuProps> = ({ handleMenuClick, isLoggedIn, ...props}) =>
       }
 
       {
+        isLoggedIn &&
+        <StyledMenuItem>
+          <Button onClick={() => handleMenuClick('logout')} variant="link" color="text">
+            <Typography size="sm" color="primary" weight="bold">LOGOUT</Typography>
+          </Button>
+        </StyledMenuItem>
+      }
+
+      {
         !isLoggedIn &&
         <StyledMenuItem>
           <Button onClick={() => handleMenuClick('login')} variant="link" color="text">
