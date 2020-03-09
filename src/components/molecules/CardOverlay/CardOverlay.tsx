@@ -16,6 +16,7 @@ const StyledCardOverlay = styled.div`
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   background-color: ${(props) => props.theme.main.colors.overlay};
+  z-index: 1;
 
   &:hover {
     opacity: 1;
