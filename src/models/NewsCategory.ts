@@ -1,5 +1,6 @@
 import { ThemeColor } from "theme";
 
+export type ExampleNews = 'news-1' | 'news-2' | 'news-3';
 export type NewsType = 'politics' | 'business' | 'tech' | 'science' | 'sports';
 
 export class NewsCategory {
@@ -32,4 +33,14 @@ export class NewsCategory {
     if (!found) throw new Error(`Invalid NewsType. Expected to receive a valid slug. Got ${slug} instead`);
     return found;
   }
+}
+
+export class News {
+  public id!: number;
+  public type!: NewsType;
+  public image?: ExampleNews;
+  public title!: string;
+  public avatar!: string;
+  public author!: string;
+  public content!: string;
 }
