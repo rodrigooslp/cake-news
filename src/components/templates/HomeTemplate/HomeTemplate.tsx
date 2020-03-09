@@ -71,19 +71,30 @@ export const HomeTemplate: FC<HomeTemplateProps> = ({ news, handleLogoClick, han
 
       <StyledContainer>
         <Row>
-          <Col xs={12} sm={12} md={6}>
-            <Card featured {...featuredNews} {...setHandlers(featuredNews)} />
-          </Col>
-          <Col xs={12} sm={6} md={3}>
-            <Card {...secondNews}  {...setHandlers(secondNews)} />
-          </Col>
-          <Col xs={12} sm={6} md={3}>
-            <Card {...thirdNews}  {...setHandlers(thirdNews)} />
-          </Col>
+          {
+            featuredNews &&
+            <Col xs={12} sm={12} md={6}>
+              <Card featured {...featuredNews} {...setHandlers(featuredNews)} />
+            </Col>
+          }
+
+          {
+            secondNews &&
+            <Col xs={12} sm={6} md={3}>
+              <Card {...secondNews}  {...setHandlers(secondNews)} />
+            </Col>
+          }
+
+          {
+            thirdNews &&
+            <Col xs={12} sm={6} md={3}>
+              <Card {...thirdNews}  {...setHandlers(thirdNews)} />
+            </Col>
+          }
         </Row>
 
         <Row>
-          <Separator></Separator>
+          { listNews.length > 0 && <Separator></Separator> }
         </Row>
 
         <Row>
