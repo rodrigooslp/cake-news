@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import WebFont from 'webfontloader';
 
 import './index.css';
 import App from 'pages/App';
 import * as serviceWorker from './serviceWorker';
+
+import { Login, Interests } from 'pages';
+import { ThemeProvider } from 'styled-components';
+import { theme } from 'theme';
 
 WebFont.load({
   google: {
@@ -12,7 +17,15 @@ WebFont.load({
   }
 });
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const routing = (
+  <Router>
+    <Route exact path="/" component={App} />
+    <Route path="/login" component={Login} />
+    <Route path="/interests" component={Interests} />
+  </Router>
+)
+
+ReactDOM.render(<ThemeProvider theme={theme}>{routing}</ThemeProvider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
