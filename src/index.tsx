@@ -3,13 +3,12 @@ import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import WebFont from 'webfontloader';
 
-import './index.css';
-import App from 'pages/App';
-import * as serviceWorker from './serviceWorker';
-
-import { Login, Interests } from 'pages';
+import { Login, Interests, Home } from 'pages';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'theme';
+
+import './index.css';
+import * as serviceWorker from './serviceWorker';
 
 WebFont.load({
   google: {
@@ -19,7 +18,7 @@ WebFont.load({
 
 const routing = (
   <Router>
-    <Route exact path="/" component={App} />
+    <Route exact path="/" component={Home} />
     <Route path="/login" component={Login} />
     <Route path="/interests" component={Interests} />
   </Router>
