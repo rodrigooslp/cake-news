@@ -8,7 +8,7 @@ type MenuProps = {
   handleMenuClick: (slug: string) => void;
 };
 
-const StyledMenu = styled.div`
+const StyledMenu = styled.nav`
   padding: 24px 0 130px;
   width: 100%;
   height: 100%;
@@ -29,7 +29,7 @@ export const Menu: FC<MenuProps> = ({ handleMenuClick, isLoggedIn, ...props}) =>
       { items.map(({ slug, text }) =>
         <StyledMenuItem key={slug}>
           <Button onClick={() => handleMenuClick(slug)} variant="link" color="text">
-            <Typography size="small">{ text }</Typography>
+            <Typography size="sm">{ text }</Typography>
           </Button>
         </StyledMenuItem>
       )}
@@ -38,7 +38,7 @@ export const Menu: FC<MenuProps> = ({ handleMenuClick, isLoggedIn, ...props}) =>
         isLoggedIn &&
         <StyledMenuItem>
           <Button onClick={() => handleMenuClick('interests')} variant="link" color="text">
-            <Typography size="small" color="primary" weight="bold">INTERESTS</Typography>
+            <Typography size="sm" color="primary" weight="bold">INTERESTS</Typography>
           </Button>
         </StyledMenuItem>
       }
@@ -47,7 +47,7 @@ export const Menu: FC<MenuProps> = ({ handleMenuClick, isLoggedIn, ...props}) =>
         !isLoggedIn &&
         <StyledMenuItem>
           <Button onClick={() => handleMenuClick('login')} variant="link" color="text">
-            <Typography size="small" color="primary" weight="bold">LOGIN</Typography>
+            <Typography size="sm" color="primary" weight="bold">LOGIN</Typography>
           </Button>
         </StyledMenuItem>
       }

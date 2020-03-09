@@ -12,4 +12,5 @@ export const Default = () =>
     username='cheesecake-labs'
     handleMenuClick={action('clicked')}
     handleSave={action('submitted')}
-    handleBack={action('back')} />;
+    handleBack={action('back')}
+    handleLogoClick={action('clicked logo')}/>;

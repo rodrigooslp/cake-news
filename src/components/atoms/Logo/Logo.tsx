@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import image1x from 'assets/icons/logo.png';
 import image2x from 'assets/icons/logo@2x.png';
 
-type LogoProps = {};
+type LogoProps = {
+  handleLogoClick?: () => void;
+};
 
 const StyledLogo = styled.img.attrs({
   src: image1x,
@@ -12,5 +14,5 @@ const StyledLogo = styled.img.attrs({
   cursor: pointer;
 `
 
-export const Logo: FC<LogoProps> = (props) =>
-  <StyledLogo { ...props } />;
+export const Logo: FC<LogoProps> = ({ handleLogoClick, ...props }) =>
+  <StyledLogo onClick={handleLogoClick} { ...props } />;

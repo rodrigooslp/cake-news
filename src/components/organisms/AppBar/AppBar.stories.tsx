@@ -6,5 +6,5 @@ export default {
   title: 'organisms/AppBar'
 }
 
-export const Default = () => <AppBar handleMenuClick={action('clicked')}/>;
-export const LoggedIn = () => <AppBar isLoggedIn handleMenuClick={action('clicked')}/>;
+export const Default = () => <AppBar handleLogoClick={action('clicked logo')} handleMenuClick={action('clicked menu item')}/>;
+export const LoggedIn = () => <AppBar isLoggedIn handleLogoClick={action('clicked logo')} handleMenuClick={action('clicked menu item')}/>;
