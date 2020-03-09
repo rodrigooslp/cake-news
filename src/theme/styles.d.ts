@@ -3,6 +3,20 @@ import * as CSS from 'csstype';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
+    awesomegrid: {
+      columns: {
+        xs: number,
+        sm: number,
+        md: number
+      },
+      gutterWidth: {
+        xs: number,
+        sm: number,
+        md: number,
+        lg: number,
+        xl: number
+      }
+    },
     main: {
       fontFamily: CSS.FontFamilyProperty,
       fontFamilyAlt: CSS.FontFamilyProperty,
