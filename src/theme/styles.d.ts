@@ -37,7 +37,8 @@ declare module 'styled-components' {
         borders: {
           input: CSS.BorderProperty,
           appBar: CSS.BorderProperty
-        }
+        },
+        overlay: CSS.ColorProperty
       }
     };
   }
