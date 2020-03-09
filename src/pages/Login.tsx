@@ -1,7 +1,9 @@
 import React, { FC, useState, useLayoutEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { LoginTemplate, LoginFormData } from 'components';
+
 import { FakeService } from 'api';
+import { LoginTemplate, LoginFormData } from 'components';
+import { Spinner } from 'util/Spinner';
 
 export const Login: FC = () => {
   const history = useHistory();
@@ -33,10 +35,13 @@ export const Login: FC = () => {
   }, [history]);
 
   return (
-    <LoginTemplate
-      handleLogin={handleLogin}
-      handleLogoClick={redirectToHome}
-      handleMenuClick={redirectToHome}
-    />
+    <>
+      <Spinner loading={loading}/>
+      <LoginTemplate
+        handleLogin={handleLogin}
+        handleLogoClick={redirectToHome}
+        handleMenuClick={redirectToHome}
+      />
+    </>
   );
 };
