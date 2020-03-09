@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
+import { ExampleNews } from 'models';
 
 import news1 from 'assets/images/news_01.jpg';
 import news1at2x from 'assets/images/news_01@2x.png';
@@ -9,8 +10,6 @@ import news2at2x from 'assets/images/news_02@2x.jpg';
 
 import news3 from 'assets/images/news_03.jpg';
 import news3at2x from 'assets/images/news_03@2x.jpg';
-
-export type ExampleNews = 'news-1' | 'news-2' | 'news-3';
 
 type ImageProps = {
   src: string;
