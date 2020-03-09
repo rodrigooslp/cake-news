@@ -2,6 +2,7 @@ import React, { FC, useState, useLayoutEffect, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { InterestTemplate, InterestFormData } from 'components';
 import { FakeService } from 'api';
+import { Spinner } from 'util/Spinner';
 
 export const Interests: FC = () => {
   const history = useHistory();
@@ -53,7 +54,6 @@ export const Interests: FC = () => {
     const { interests } = await FakeService.getInterests();
     setSelected(interests);
     setLoading(false);
-    console.log(interests);
   };
 
   useEffect(() => {
@@ -61,14 +61,17 @@ export const Interests: FC = () => {
   }, []);
 
   return (
-    <InterestTemplate
-      selected={selected}
-      username={username}
-      isLoggedIn={isLoggedIn}
-      handleSave={handleSave}
-      handleBack={redirectToHome}
-      handleLogoClick={redirectToHome}
-      handleMenuClick={redirectToHome}
-    />
+    <>
+      <Spinner loading={loading}/>
+      <InterestTemplate
+        selected={selected}
+        username={username}
+        isLoggedIn={isLoggedIn}
+        handleSave={handleSave}
+        handleBack={redirectToHome}
+        handleLogoClick={redirectToHome}
+        handleMenuClick={redirectToHome}
+      />
+    </>
   );
 };

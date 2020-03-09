@@ -28,7 +28,7 @@ export const InterestTemplate: FC<InterestTemplateProps> = ({ selected, isLogged
     <StyledInterestTemplate { ...props }>
       <AppBar handleLogoClick={handleLogoClick} isLoggedIn={isLoggedIn} handleMenuClick={handleMenuClick} />
       <StyledWelcome username={username}/>
-      <InterestForm selected={selected} handleSave={handleSave} handleBack={handleBack}/>
+      <InterestForm selected={selected || []} handleSave={handleSave} handleBack={handleBack}/>
     </StyledInterestTemplate>
   );
 };

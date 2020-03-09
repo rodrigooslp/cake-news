@@ -20,7 +20,7 @@ interface InterestsData {
   interests: string[];
 }
 
-const TIMEOUT = 1500;
+const TIMEOUT = 1000;
 
 export abstract class FakeService {
   private static _superSecretAndUltraSecureDB: { interests: string[] } = {
