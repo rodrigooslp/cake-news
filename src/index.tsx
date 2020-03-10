@@ -26,4 +26,4 @@ const routing = (
 );
 
 ReactDOM.render(<ThemeProvider theme={theme}>{routing}</ThemeProvider>, document.getElementById('root'));
-serviceWorker.unregister();
+serviceWorker.register();
