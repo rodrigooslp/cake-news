@@ -40,8 +40,10 @@ export const Interests: FC = () => {
   };
 
   useLayoutEffect(() => {
-    const user = localStorage.getItem('cake-token');
-    if (!user) {
+    const user = localStorage.getItem('cake-user');
+    const token = localStorage.getItem('cake-token');
+
+    if (!token || !user) {
       history.push('/login');
       return;
     }
