@@ -1,9 +1,10 @@
 import React, { FC, useState, useLayoutEffect, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+
+import { FakeService } from 'api';
 import { HomeTemplate } from 'components';
 import { News } from 'models';
-import { FakeService } from 'api';
-import { Spinner } from 'util/Spinner';
+import { Spinner } from 'shared';
 
 interface HomeProps {
   match: any;
@@ -11,11 +12,12 @@ interface HomeProps {
 
 export const Home: FC<HomeProps> = ({ match }) => {
   const history = useHistory();
+
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [news, setNews] = useState<News []>([]);
 
-  const redirectToHome = (slug?: string) => {
+  const redirect = (slug?: string) => {
     if (slug === 'interests') {
       history.push('/interests');
       return;
@@ -41,16 +43,14 @@ export const Home: FC<HomeProps> = ({ match }) => {
     history.push('/');
   };
 
+  // this could show an author page
   const showAuthor = (author: string) => {
     console.log({ author });
   };
 
+  // this could show the clicked news in more detail
   const showNews = (id: number) => {
     console.log({ id })
-  };
-
-  const showTag = (slug: string) => {
-    console.log({ slug });
   };
 
   const getInterests = async () => {
@@ -74,7 +74,7 @@ export const Home: FC<HomeProps> = ({ match }) => {
   }, [match]);
 
   useLayoutEffect(() => {
-    const user = localStorage.getItem('cake-user');
+    const user = localStorage.getItem('cake-token');
     setIsLoggedIn(!!user);
   }, [history]);
 
@@ -84,11 +84,11 @@ export const Home: FC<HomeProps> = ({ match }) => {
       <HomeTemplate
         news={news}
         isLoggedIn={isLoggedIn}
-        handleTagClick={showTag}
         handleCardClick={showNews}
         handleAuthorClick={showAuthor}
-        handleLogoClick={redirectToHome}
-        handleMenuClick={redirectToHome}
+        handleTagClick={redirect}
+        handleLogoClick={redirect}
+        handleMenuClick={redirect}
       />
     </>
   );

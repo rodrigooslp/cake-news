@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { FakeService } from 'api';
 import { LoginTemplate, LoginFormData } from 'components';
-import { Spinner } from 'util/Spinner';
+import { Spinner } from 'shared';
 
 export const Login: FC = () => {
   const history = useHistory();
@@ -20,7 +20,7 @@ export const Login: FC = () => {
     history.push('/');
   };
 
-  const redirectToHome = (slug?: string) => {
+  const redirect = (slug?: string) => {
     if (slug === 'login') return;
 
     if (slug) {
@@ -31,7 +31,7 @@ export const Login: FC = () => {
   };
 
   useLayoutEffect(() => {
-    if (localStorage.getItem('cake-user')) history.push('/');
+    if (localStorage.getItem('cake-token')) history.push('/');
   }, [history]);
 
   return (
@@ -39,8 +39,8 @@ export const Login: FC = () => {
       <Spinner loading={loading}/>
       <LoginTemplate
         handleLogin={handleLogin}
-        handleLogoClick={redirectToHome}
-        handleMenuClick={redirectToHome}
+        handleLogoClick={redirect}
+        handleMenuClick={redirect}
       />
     </>
   );

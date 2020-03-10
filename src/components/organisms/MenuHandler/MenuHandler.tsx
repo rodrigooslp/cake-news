@@ -27,7 +27,7 @@ const MenuContainer = styled.div<MenuContainerProps>`
   top: 57px;
   left: 0;
   width: 100%;
-  height: calc(100vh - 211px);
+  height: calc(100vh - 208px);
   transition: transform 0.3s ease-in-out;
   transform: translateX(-100%);
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
@@ -44,17 +44,27 @@ export const MenuHandler: FC<MenuHandlerProps> = ({ handleMenuClick, isLoggedIn,
     if (!ref.current.contains(event.target)) setOpenMenu(false);
   }
 
+  const handleWrapper = (slug: string) => {
+    setOpenMenu(false);
+    handleMenuClick(slug);
+  };
+
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   });
+
+  useEffect(() => {
+    if (openMenu) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = 'unset';
+  }, [openMenu]);
 
   return (
     <StyledMenuHandler ref={ref} {...props}>
       <StyledHamburger onClick={() => setOpenMenu(!openMenu)}/>
 
       <MenuContainer open={openMenu}>
-        <Menu isLoggedIn={isLoggedIn} handleMenuClick={handleMenuClick}/>
+        <Menu isLoggedIn={isLoggedIn} handleMenuClick={handleWrapper}/>
       </MenuContainer>
     </StyledMenuHandler>
   );

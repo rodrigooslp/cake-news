@@ -1,8 +1,9 @@
 import React, { FC, useState, useLayoutEffect, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { InterestTemplate, InterestFormData } from 'components';
+
 import { FakeService } from 'api';
-import { Spinner } from 'util/Spinner';
+import { InterestTemplate, InterestFormData } from 'components';
+import { Spinner } from 'shared';
 
 export const Interests: FC = () => {
   const history = useHistory();
@@ -20,7 +21,7 @@ export const Interests: FC = () => {
     history.push('/');
   };
 
-  const redirectToHome = (slug?: string) => {
+  const redirect = (slug?: string) => {
     if (slug === 'interests') return;
 
     if (slug === 'logout') {
@@ -40,7 +41,9 @@ export const Interests: FC = () => {
 
   useLayoutEffect(() => {
     const user = localStorage.getItem('cake-user');
-    if (!user) {
+    const token = localStorage.getItem('cake-token');
+
+    if (!token || !user) {
       history.push('/login');
       return;
     }
@@ -68,9 +71,9 @@ export const Interests: FC = () => {
         username={username}
         isLoggedIn={isLoggedIn}
         handleSave={handleSave}
-        handleBack={redirectToHome}
-        handleLogoClick={redirectToHome}
-        handleMenuClick={redirectToHome}
+        handleBack={redirect}
+        handleLogoClick={redirect}
+        handleMenuClick={redirect}
       />
     </>
   );
