@@ -1,36 +1,26 @@
-# Challenge
+# Cake News: better cake than fake
 
-The main goal of this challenge is to analyze the skills and knowledge the applicant presents related to web development and its latest trends, as well as their ability to write code, comments and meaningful git commits.
+The project was done following the concepts of atomic design and CDD. It's really nice to see how mature the whole web ecosystem has become in the last few years. The most important tools and technologies utilized here were: ReactJS with Typescript, Storybook and styled-components. I really wanted to use Cypress and get a nice coverage of E2E tests, but given the time constraints, unfortunately something had to be cut out. The bulk of the project was done in two days.
 
-The applicant must develop the responsive front-end of a news website, according to the mockups and specs provided. We encourage the application to use `Linux` or `Mac` for the challenge.
+The Github project was the tool of choice to keep track of what was done and how many tasks still had be addressed.
 
-# MVP
+The link of the project is [here](https://github.com/cheesecakelabs-challenges/rodrigo-silva-lopes-frontend/projects/1).
 
-1. Requirements for the news website: All development should be done in a secondary (non-master) branch
-The layout should precisely match the provided mockups
-The website should be front-end rendered, using `ReactJS`, and the news content should be loaded using emulated HTTP requests with a simulated delay to enable observing the transitions
-2. The page should be deployed to an online environment.
-3. Push your code to this repository and create a Pull Request to the master branch adding `cheesecakelabs-challenges` user as a reviewer.
-
-# Extras
-
-1. CSS animations
-2. Loading transitions
-
-# Evaluation Criteria
-
-- Overall CSS and HTML knowledge
-- Responsive/fluid layout knowledge
-- Usage of meaningful HTML tags
-- Bandwidth usage optimization
-- Front-end (JS, CSS and HTML) architecture principles
-- Organization (folder structure, class naming, etc)
-- Component modularity/reusability
-- Retina display adaptation
-- Deadline
+### Things I would like to add if I had more time:
+- Redux & Redux Saga
+- E2E Tests with Cypress
+- Unit Tests with Jest
 
 # Deliverables
-Link to the live frontend webapp.
+The webapp is currently deployed on the Heroku platform. [Here](https://cake-news-app.herokuapp.com) it is.
 
-# Mockup
-The assets and prototypes can be found [here](https://drive.google.com/drive/folders/1CWjEhRhwFmlVdSdhprnDTi2Z4swsWXdI?usp=sharing).
+# Project setup
+`yarn install`
+
+`yarn start` to run the app.
+
+`yarn build` generates the production ready bundle.
+
+`yarn storybook` runs storybook.
+
+I highly recommend you to run `yarn storybook` to see the components in isolation.
