@@ -4,8 +4,6 @@ The project was done following the concepts of atomic design and CDD. It's reall
 
 The Github project was the tool of choice to keep track of what was done and how many tasks still had be addressed.
 
-The link of the project is [here](https://github.com/cheesecakelabs-challenges/rodrigo-silva-lopes-frontend/projects/1).
-
 ### Things I would like to add if I had more time:
 - Redux & Redux Saga
 - E2E Tests with Cypress
