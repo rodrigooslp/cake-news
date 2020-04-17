@@ -10,7 +10,8 @@ The Github project was the tool of choice to keep track of what was done and how
 - Unit Tests with Jest
 
 # Deliverables
-The webapp is currently deployed on the Heroku platform. [Here](https://cake-news-app.herokuapp.com) it is.
+The webapp is currently deployed on the Netlify platform. [Here](https://cake-news.netlify.app/) it is.
+A page with the docs is also available [here](https://cake-news-docs.netlify.app/).
 
 # Project setup
 `yarn install`
